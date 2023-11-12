@@ -465,11 +465,11 @@ def render_tab5():
     """
     
     # Fetch news
-    stock_news = yf.Ticker(selected_ticker).news
+    stock_news = yf.Ticker(selected_ticker).calendar_events
 
     # Display stock news
     st.write("**Latest News**")
-    #st.dataframe(stock_news)
+    st.dataframe(stock_news)
 
     # Fetch options expirations
     options_expirations = yf.Ticker(selected_ticker).options
