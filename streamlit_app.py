@@ -464,11 +464,11 @@ def render_tab5():
     This function renders Tab 5 - Options and News of the dashboard.
     """
     # Fetch news
-    stock_news = yf.Ticker(selected_ticker).news
-
+    # stock_news = yf.Ticker(selected_ticker).news
+    
     # Display stock news
-    st.write("**Latest News**")
-    st.dataframe(stock_news)
+    # st.write("**Latest News**")
+    # st.dataframe(stock_news)
 
     # Fetch options expirations
     options_expirations = yf.Ticker(selected_ticker).options
