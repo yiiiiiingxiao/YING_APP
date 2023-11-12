@@ -415,7 +415,7 @@ def render_tab4():
     simulation_results = MonteCarloSimulation(historical_data, num_simulations, time_horizon)
 
     # Calculate VaR at 95% confidence interval
-    if(timeHorizonValues!=[])
+    if timeHorizonValues!=[]
         var_95 = np.percentile(timeHorizonValues, 5)
     else
         var_95=0
