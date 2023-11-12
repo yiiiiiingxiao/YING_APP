@@ -465,7 +465,7 @@ def render_tab5():
     """
     
     # Fetch news
-    #stock_news = yf.Ticker(selected_ticker).news
+    stock_news = yf.Ticker(selected_ticker).news
 
     # Display stock news
     st.write("**Latest News**")
