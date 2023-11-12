@@ -382,11 +382,12 @@ def render_tab4():
 
     # Fetch historical data for Monte Carlo simulation
     historical_data = yf.Ticker(selected_ticker).history(period="max", interval="1d")
-    timeHorizonValues=[]
+
 
     # Perform Monte Carlo simulation
     @st.cache_data
     def MonteCarloSimulation(data, num_simulations, time_horizon):
+        timeHorizonValues=[]
         returns = data['Close'].pct_change().dropna()
         close_price = data['Close'].iloc[-1]
 
@@ -409,14 +410,15 @@ def render_tab4():
             simulation_df[f"Simulation {i+1}"] = price_series
             
 
-        return simulation_df
+        return simulation_df,timeHorizonValues
 
     # Run Monte Carlo simulation
-    simulation_results = MonteCarloSimulation(historical_data, num_simulations, time_horizon)
+    montecarloresult=MonteCarloSimulation(historical_data, num_simulations, time_horizon)
+    simulation_results = montecarloresult[0]
 
     # Calculate VaR at 95% confidence interval
-    if len(timeHorizonValues)!=0:
-        var_95 = np.percentile(timeHorizonValues, 5)
+    if len(montecarloresult[1])!=0:
+        var_95 = np.percentile(montecarloresult[1], 5)
     else:
         var_95=0
 
