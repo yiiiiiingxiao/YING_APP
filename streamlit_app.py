@@ -461,7 +461,7 @@ def render_tab4():
 #==============================================================================
 def render_tab5():
     """
-    This function renders Tab 5 - Options and News of the dashboard.
+    This function renders Tab 5 - Options of the dashboard.
     """
     # Fetch news
     # stock_news = yf.Ticker(selected_ticker).news
