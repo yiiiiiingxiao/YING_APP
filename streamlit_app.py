@@ -516,7 +516,7 @@ def render_tab5():
 render_header()
 
 # Render the tabs
-tab1, tab2,tab3, tab4, tab5 = st.tabs(["Company profile", "Chart", "Financials","Monte Carlo", "Options and News"])
+tab1, tab2,tab3, tab4, tab5 = st.tabs(["Company profile", "Chart", "Financials","Monte Carlo", "Options"])
 with tab1:
     render_tab1()
 with tab2:
