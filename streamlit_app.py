@@ -471,7 +471,7 @@ def render_tab5():
     st.dataframe(stock_news)
 
     # Fetch options expirations
-    options_expirations = yf.Ticker(selected_ticker).options
+    options_expirations = yf.Ticker(selected_ticker).asset_profile
 
     # Add an option to select a specific expiration date for the option chain
     selected_expiration = st.selectbox("Select Options Expiration", options_expirations)
